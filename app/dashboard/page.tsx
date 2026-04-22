@@ -1103,13 +1103,13 @@ export default function DashboardPage() {
   return (
     <main className="min-h-screen bg-black text-white">
       <div className="relative min-h-screen overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_18%,rgba(37,99,235,0.16),transparent_28%),radial-gradient(circle_at_82%_24%,rgba(59,130,246,0.10),transparent_24%),radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.03),transparent_30%)]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/70 to-black/90" />
-        <div className="absolute inset-0 opacity-[0.04] [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:80px_80px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(37,99,235,0.28),transparent_30%),radial-gradient(circle_at_82%_18%,rgba(59,130,246,0.18),transparent_28%),radial-gradient(circle_at_50%_55%,rgba(29,78,216,0.10),transparent_34%),radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.03),transparent_30%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/62 to-black/88" />
+        <div className="absolute inset-0 opacity-[0.05] [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:80px_80px]" />
 
-        <div className="absolute -left-24 top-20 h-[360px] w-[360px] rounded-full bg-[#2563EB]/18 blur-[150px]" />
-        <div className="absolute bottom-0 right-[-40px] h-[340px] w-[340px] rounded-full bg-[#1D4ED8]/14 blur-[160px]" />
-
+       <div className="absolute -left-32 top-12 h-[520px] w-[520px] rounded-full bg-[#2563EB]/26 blur-[190px]" />
+       <div className="absolute right-[-80px] top-[120px] h-[460px] w-[460px] rounded-full bg-[#1D4ED8]/18 blur-[190px]" />
+       <div className="absolute bottom-[-40px] left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-[#1E3A8A]/14 blur-[190px]" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-8 md:px-8 md:py-10">
           <div className="mb-8 flex flex-col gap-5 md:mb-10 md:flex-row md:items-end md:justify-between">
             <div>
