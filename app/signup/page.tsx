@@ -85,54 +85,54 @@ export default function SignupPage() {
         <div className="absolute -left-24 top-20 h-[320px] w-[320px] rounded-full bg-[#2563EB]/16 blur-[140px]" />
         <div className="absolute bottom-0 right-[-40px] h-[320px] w-[320px] rounded-full bg-[#1D4ED8]/14 blur-[150px]" />
 
-        <div className="relative z-10 flex min-h-screen items-center justify-center px-4 py-10">
-          <div className="grid w-full max-w-6xl overflow-hidden rounded-[36px] border border-white/10 bg-white/[0.04] shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl md:grid-cols-2">
-            <div className="border-b border-white/10 p-10 md:border-b-0 md:border-r">
+        <div className="relative z-10 flex min-h-screen items-center justify-center px-4 py-8">
+          <div className="grid w-full max-w-5xl overflow-hidden rounded-[36px] border border-white/10 bg-white/[0.04] shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl md:grid-cols-2">
+            <div className="border-b border-white/10 p-8 md:border-b-0 md:border-r md:p-10">
               <p className="text-sm uppercase tracking-[0.28em] text-white/35">
                 LiftLog
               </p>
 
-              <h1 className="mt-6 text-5xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
+              <h1 className="mt-5 text-4xl font-semibold leading-tight tracking-tight text-white md:text-5xl">
                 Build disciplined progress.
               </h1>
 
-              <p className="mt-6 max-w-xl text-lg leading-8 text-white/60">
+              <p className="mt-5 max-w-lg text-base leading-8 text-white/60">
                 Create your account and start tracking calories, macros, weight,
                 and smarter food suggestions from one clean dashboard.
               </p>
 
-              <div className="mt-10 space-y-5">
-                <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
+              <div className="mt-8 space-y-4">
+                <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-5">
                   <p className="text-sm text-white/35">Track daily calories</p>
-                  <p className="mt-2 text-2xl font-semibold text-white">
+                  <p className="mt-2 text-xl font-semibold text-white">
                     Stay consistent every day
                   </p>
                 </div>
 
-                <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
+                <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-5">
                   <p className="text-sm text-white/35">
                     Personalized food suggestions
                   </p>
-                  <p className="mt-2 text-2xl font-semibold text-white">
+                  <p className="mt-2 text-xl font-semibold text-white">
                     Eat based on your actual habits
                   </p>
                 </div>
 
-                <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
+                <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-5">
                   <p className="text-sm text-white/35">Clean onboarding flow</p>
-                  <p className="mt-2 text-2xl font-semibold text-white">
+                  <p className="mt-2 text-xl font-semibold text-white">
                     Set goals and start immediately
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="p-10">
-              <h2 className="text-4xl font-semibold tracking-tight text-white">
+            <div className="p-8 md:p-10">
+              <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
                 Create your account
               </h2>
 
-              <p className="mt-4 text-lg leading-7 text-white/60">
+              <p className="mt-3 text-base leading-7 text-white/60">
                 Sign up to start tracking your goals, food, and progress.
               </p>
 
@@ -142,7 +142,7 @@ export default function SignupPage() {
                 </div>
               )}
 
-              <div className="mt-8 space-y-4">
+              <div className="mt-7 space-y-4">
                 <input
                   type="text"
                   placeholder="Full name"
