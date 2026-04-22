@@ -1049,7 +1049,7 @@ export default function DashboardPage() {
     return {
       headline: "You’re moving in the right direction.",
       description: "Keep logging consistently and adjust as needed.",
-    };
+      };
   }, [
     savedCalories,
     savedCalorieGoal,
@@ -1101,178 +1101,207 @@ export default function DashboardPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.08),_transparent_35%),linear-gradient(to_bottom,_#09090b,_#000000)] text-white">
-      <div className="mx-auto max-w-7xl px-4 py-8 md:px-8 md:py-10">
-        <div className="mb-8 md:mb-10 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p className="text-sm uppercase tracking-[0.22em] text-zinc-500 mb-2">
-              LiftLog
-            </p>
-            <h1 className="text-4xl md:text-5xl font-semibold tracking-tight">
-              Dashboard
-            </h1>
-            <p className="text-zinc-400 mt-3 max-w-2xl">
-              Track your nutrition, daily progress, and body weight in one clean place.
-            </p>
-          </div>
+    <main className="min-h-screen bg-black text-white">
+      <div className="relative min-h-screen overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_18%,rgba(37,99,235,0.16),transparent_28%),radial-gradient(circle_at_82%_24%,rgba(59,130,246,0.10),transparent_24%),radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.03),transparent_30%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/70 to-black/90" />
+        <div className="absolute inset-0 opacity-[0.04] [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:80px_80px]" />
 
-          <div className="grid grid-cols-3 gap-3">
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 min-w-[110px]">
-              <p className="text-xs text-zinc-500">Calories</p>
-              <p className="text-lg font-semibold">{formatMacro(savedCalories)}</p>
-              <p className="text-xs text-zinc-500 mt-1">
-                of {formatMacro(savedCalorieGoal)}
+        <div className="absolute -left-24 top-20 h-[360px] w-[360px] rounded-full bg-[#2563EB]/18 blur-[150px]" />
+        <div className="absolute bottom-0 right-[-40px] h-[340px] w-[340px] rounded-full bg-[#1D4ED8]/14 blur-[160px]" />
+
+        <div className="relative z-10 mx-auto max-w-7xl px-4 py-8 md:px-8 md:py-10">
+          <div className="mb-8 flex flex-col gap-5 md:mb-10 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="mb-2 text-sm uppercase tracking-[0.22em] text-[#60A5FA]/70">
+                LiftLog
+              </p>
+              <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">
+                Dashboard
+              </h1>
+              <p className="mt-3 max-w-2xl text-zinc-400">
+                Track your nutrition, daily progress, and body weight in one clean place.
               </p>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 min-w-[110px]">
-              <p className="text-xs text-zinc-500">Protein</p>
-              <p className="text-lg font-semibold">{formatMacro(savedProtein)}g</p>
-              <p className="text-xs text-zinc-500 mt-1">
-                of {formatMacro(savedProteinGoal)}g
-              </p>
-            </div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 min-w-[110px]">
-              <p className="text-xs text-zinc-500">Weight</p>
-              <p className="text-lg font-semibold">
-                {formatMacro(savedCurrentWeight)} lbs
-              </p>
-              <p className="text-xs text-zinc-500 mt-1">
-                goal {formatMacro(savedWeightGoal)}
-              </p>
-            </div>
-          </div>
-        </div>
 
-        {messageText && (
-          <div
-            className={`mb-6 rounded-2xl border px-4 py-3 text-sm md:text-base ${
-              messageType === "error"
-                ? "border-red-500/30 bg-red-500/10 text-red-300"
-                : "border-emerald-500/30 bg-emerald-500/10 text-emerald-300"
-            }`}
-          >
-            {messageText}
-          </div>
-        )}
-
-        {isDashboardLoading && (
-          <div className="mb-6 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-zinc-400">
-            Loading dashboard data...
-          </div>
-        )}
-
-        <div className="grid gap-6 lg:grid-cols-12">
-          <div className="lg:col-span-7 space-y-6">
-            <section className="rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-sm shadow-[0_10px_40px_rgba(0,0,0,0.35)]">
-              <div className="p-6 md:p-7">
-                <div className="mb-5">
-                  <h2 className="text-xl md:text-2xl font-semibold text-white">
-                    Day at a Glance
-                  </h2>
-                  <p className="text-sm text-zinc-400 mt-1">
-                    Live dashboard feedback based on today’s logs only.
-                  </p>
-                </div>
-
-                <div className="space-y-4">
-                  <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                    <p className="text-lg font-semibold text-white">
-                      {progressTone.headline}
-                    </p>
-                    <p className="mt-2 text-sm text-zinc-400">
-                      {progressTone.description}
-                    </p>
-                  </div>
-
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                    <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                      <p className="text-xs text-zinc-500">Meals Logged Today</p>
-                      <p className="mt-1 text-xl font-semibold">{todayFoodLogs.length}</p>
-                    </div>
-                    <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                      <p className="text-xs text-zinc-500">Calories Left</p>
-                      <p className="mt-1 text-xl font-semibold">
-                        {formatMacro(caloriesRemaining)}
-                      </p>
-                    </div>
-                    <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                      <p className="text-xs text-zinc-500">Protein Left</p>
-                      <p className="mt-1 text-xl font-semibold">
-                        {formatMacro(proteinRemaining)}g
-                      </p>
-                    </div>
-                    <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                      <p className="text-xs text-zinc-500">Current Weight</p>
-                      <p className="mt-1 text-xl font-semibold">
-                        {formatMacro(savedCurrentWeight)} lbs
-                      </p>
-                    </div>
-                  </div>
-                </div>
+            <div className="grid grid-cols-3 gap-3">
+              <div className="min-w-[110px] rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.22)] backdrop-blur-sm">
+                <p className="text-xs text-zinc-500">Calories</p>
+                <p className="text-lg font-semibold">{formatMacro(savedCalories)}</p>
+                <p className="mt-1 text-xs text-zinc-500">
+                  of {formatMacro(savedCalorieGoal)}
+                </p>
               </div>
-            </section>
-
-            <LogFoodCard
-              foodName={foodName}
-              setFoodName={setFoodName}
-              onFindFood={handleFindFood}
-            />
-
-            <RecentFoodEntriesCard
-              recentEntries={recentEntries}
-              onEditFood={handleEditFood}
-              onDeleteFood={handleDeleteFood}
-              isDeletingFoodId={isDeletingFoodId}
-            />
-
-            <FoodHistory historyDays={historyDays} />
-
-            <GoalsOverviewCard
-              savedCalorieGoal={round1(savedCalorieGoal)}
-              savedProteinGoal={round1(savedProteinGoal)}
-              savedCarbGoal={round1(savedCarbGoal)}
-              savedFatGoal={round1(savedFatGoal)}
-              savedWeightGoal={round1(savedWeightGoal)}
-            />
-
-            <UpdateGoalsCard onOpen={() => setShowGoalsModal(true)} />
-
-            <WeightTrackingCard
-              savedCurrentWeight={round1(savedCurrentWeight)}
-              savedWeightGoal={round1(savedWeightGoal)}
-              onOpen={() => setShowWeightModal(true)}
-            />
+              <div className="min-w-[110px] rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.22)] backdrop-blur-sm">
+                <p className="text-xs text-zinc-500">Protein</p>
+                <p className="text-lg font-semibold">{formatMacro(savedProtein)}g</p>
+                <p className="mt-1 text-xs text-zinc-500">
+                  of {formatMacro(savedProteinGoal)}g
+                </p>
+              </div>
+              <div className="min-w-[110px] rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.22)] backdrop-blur-sm">
+                <p className="text-xs text-zinc-500">Weight</p>
+                <p className="text-lg font-semibold">
+                  {formatMacro(savedCurrentWeight)} lbs
+                </p>
+                <p className="mt-1 text-xs text-zinc-500">
+                  goal {formatMacro(savedWeightGoal)}
+                </p>
+              </div>
+            </div>
           </div>
 
-          <div className="lg:col-span-5 space-y-6">
-            <TodaySummaryCard
-              recentEntriesCount={todayFoodLogs.length}
-              caloriesRemaining={caloriesRemaining}
-              proteinRemaining={proteinRemaining}
-              savedCurrentWeight={savedCurrentWeight}
-            />
+          {messageText && (
+            <div
+              className={`mb-6 rounded-2xl border px-4 py-3 text-sm md:text-base ${
+                messageType === "error"
+                  ? "border-red-500/30 bg-red-500/10 text-red-300"
+                  : "border-blue-500/20 bg-blue-500/10 text-blue-200"
+              }`}
+            >
+              {messageText}
+            </div>
+          )}
 
-            <SmartComboMealsCard
-              smartCombos={smartCombos}
-              onAddCombo={handleAddCombo}
-            />
+          {isDashboardLoading && (
+            <div className="mb-6 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-zinc-400 backdrop-blur-sm">
+              Loading dashboard data...
+            </div>
+          )}
 
-            <DailyProgressCard
-              savedCalories={round1(savedCalories)}
-              savedCalorieGoal={round1(savedCalorieGoal)}
-              savedProtein={round1(savedProtein)}
-              savedProteinGoal={round1(savedProteinGoal)}
-              savedCarbs={round1(savedCarbs)}
-              savedCarbGoal={round1(savedCarbGoal)}
-              savedFats={round1(savedFats)}
-              savedFatGoal={round1(savedFatGoal)}
-              caloriesRemaining={caloriesRemaining}
-              proteinRemaining={proteinRemaining}
-              carbsRemaining={carbsRemaining}
-              fatsRemaining={fatsRemaining}
-            />
+          <div className="grid gap-6 lg:grid-cols-12">
+            <div className="space-y-6 lg:col-span-7">
+              <section className="rounded-3xl border border-white/10 bg-white/[0.05] shadow-[0_20px_50px_rgba(0,0,0,0.28)] backdrop-blur-xl">
+                <div className="p-6 md:p-7">
+                  <div className="mb-5">
+                    <h2 className="text-xl font-semibold text-white md:text-2xl">
+                      Day at a Glance
+                    </h2>
+                    <p className="mt-1 text-sm text-zinc-400">
+                      Live dashboard feedback based on today’s logs only.
+                    </p>
+                  </div>
 
-            <AccountCard />
+                  <div className="space-y-4">
+                    <div className="rounded-2xl border border-white/10 bg-[linear-gradient(180deg,rgba(37,99,235,0.08),rgba(255,255,255,0.03))] p-4">
+                      <p className="text-lg font-semibold text-white">
+                        {progressTone.headline}
+                      </p>
+                      <p className="mt-2 text-sm text-zinc-400">
+                        {progressTone.description}
+                      </p>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+                      <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+                        <p className="text-xs text-zinc-500">Meals Logged Today</p>
+                        <p className="mt-1 text-xl font-semibold">{todayFoodLogs.length}</p>
+                      </div>
+                      <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+                        <p className="text-xs text-zinc-500">Calories Left</p>
+                        <p className="mt-1 text-xl font-semibold">
+                          {formatMacro(caloriesRemaining)}
+                        </p>
+                      </div>
+                      <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+                        <p className="text-xs text-zinc-500">Protein Left</p>
+                        <p className="mt-1 text-xl font-semibold">
+                          {formatMacro(proteinRemaining)}g
+                        </p>
+                      </div>
+                      <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+                        <p className="text-xs text-zinc-500">Current Weight</p>
+                        <p className="mt-1 text-xl font-semibold">
+                          {formatMacro(savedCurrentWeight)} lbs
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <div className="[&>*]:rounded-3xl [&>*]:border [&>*]:border-white/10 [&>*]:bg-white/[0.05] [&>*]:shadow-[0_20px_50px_rgba(0,0,0,0.24)] [&>*]:backdrop-blur-xl">
+                <LogFoodCard
+                  foodName={foodName}
+                  setFoodName={setFoodName}
+                  onFindFood={handleFindFood}
+                />
+              </div>
+
+              <div className="[&>*]:rounded-3xl [&>*]:border [&>*]:border-white/10 [&>*]:bg-white/[0.05] [&>*]:shadow-[0_20px_50px_rgba(0,0,0,0.24)] [&>*]:backdrop-blur-xl">
+                <RecentFoodEntriesCard
+                  recentEntries={recentEntries}
+                  onEditFood={handleEditFood}
+                  onDeleteFood={handleDeleteFood}
+                  isDeletingFoodId={isDeletingFoodId}
+                />
+              </div>
+
+              <div className="[&>*]:rounded-3xl [&>*]:border [&>*]:border-white/10 [&>*]:bg-white/[0.05] [&>*]:shadow-[0_20px_50px_rgba(0,0,0,0.24)] [&>*]:backdrop-blur-xl">
+                <FoodHistory historyDays={historyDays} />
+              </div>
+
+              <div className="[&>*]:rounded-3xl [&>*]:border [&>*]:border-white/10 [&>*]:bg-white/[0.05] [&>*]:shadow-[0_20px_50px_rgba(0,0,0,0.24)] [&>*]:backdrop-blur-xl">
+                <GoalsOverviewCard
+                  savedCalorieGoal={round1(savedCalorieGoal)}
+                  savedProteinGoal={round1(savedProteinGoal)}
+                  savedCarbGoal={round1(savedCarbGoal)}
+                  savedFatGoal={round1(savedFatGoal)}
+                  savedWeightGoal={round1(savedWeightGoal)}
+                />
+              </div>
+
+              <div className="[&>*]:rounded-3xl [&>*]:border [&>*]:border-white/10 [&>*]:bg-white/[0.05] [&>*]:shadow-[0_20px_50px_rgba(0,0,0,0.24)] [&>*]:backdrop-blur-xl">
+                <UpdateGoalsCard onOpen={() => setShowGoalsModal(true)} />
+              </div>
+
+              <div className="[&>*]:rounded-3xl [&>*]:border [&>*]:border-white/10 [&>*]:bg-white/[0.05] [&>*]:shadow-[0_20px_50px_rgba(0,0,0,0.24)] [&>*]:backdrop-blur-xl">
+                <WeightTrackingCard
+                  savedCurrentWeight={round1(savedCurrentWeight)}
+                  savedWeightGoal={round1(savedWeightGoal)}
+                  onOpen={() => setShowWeightModal(true)}
+                />
+              </div>
+            </div>
+
+            <div className="space-y-6 lg:col-span-5">
+              <div className="[&>*]:rounded-3xl [&>*]:border [&>*]:border-white/10 [&>*]:bg-white/[0.05] [&>*]:shadow-[0_20px_50px_rgba(0,0,0,0.24)] [&>*]:backdrop-blur-xl">
+                <TodaySummaryCard
+                  recentEntriesCount={todayFoodLogs.length}
+                  caloriesRemaining={caloriesRemaining}
+                  proteinRemaining={proteinRemaining}
+                  savedCurrentWeight={savedCurrentWeight}
+                />
+              </div>
+
+              <div className="[&>*]:rounded-3xl [&>*]:border [&>*]:border-white/10 [&>*]:bg-white/[0.05] [&>*]:shadow-[0_20px_50px_rgba(0,0,0,0.24)] [&>*]:backdrop-blur-xl">
+                <SmartComboMealsCard
+                  smartCombos={smartCombos}
+                  onAddCombo={handleAddCombo}
+                />
+              </div>
+
+              <div className="[&>*]:rounded-3xl [&>*]:border [&>*]:border-white/10 [&>*]:bg-white/[0.05] [&>*]:shadow-[0_20px_50px_rgba(0,0,0,0.24)] [&>*]:backdrop-blur-xl">
+                <DailyProgressCard
+                  savedCalories={round1(savedCalories)}
+                  savedCalorieGoal={round1(savedCalorieGoal)}
+                  savedProtein={round1(savedProtein)}
+                  savedProteinGoal={round1(savedProteinGoal)}
+                  savedCarbs={round1(savedCarbs)}
+                  savedCarbGoal={round1(savedCarbGoal)}
+                  savedFats={round1(savedFats)}
+                  savedFatGoal={round1(savedFatGoal)}
+                  caloriesRemaining={caloriesRemaining}
+                  proteinRemaining={proteinRemaining}
+                  carbsRemaining={carbsRemaining}
+                  fatsRemaining={fatsRemaining}
+                />
+              </div>
+
+              <div className="[&>*]:rounded-3xl [&>*]:border [&>*]:border-white/10 [&>*]:bg-white/[0.05] [&>*]:shadow-[0_20px_50px_rgba(0,0,0,0.24)] [&>*]:backdrop-blur-xl">
+                <AccountCard />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1333,9 +1362,11 @@ export default function DashboardPage() {
       />
 
       {showDeleteModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4">
-          <div className="w-full max-w-md rounded-3xl border border-white/10 bg-[#111113] shadow-[0_20px_80px_rgba(0,0,0,0.5)]">
-            <div className="border-b border-white/10 px-6 py-5">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-4">
+          <div className="relative w-full max-w-md overflow-hidden rounded-3xl border border-white/10 bg-[#0d1018] shadow-[0_30px_120px_rgba(0,0,0,0.65)]">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(37,99,235,0.12),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(59,130,246,0.08),transparent_30%)]" />
+
+            <div className="relative border-b border-white/10 px-6 py-5">
               <h2 className="text-2xl font-semibold text-white">Delete Logged Meal</h2>
               <p className="mt-2 text-sm text-zinc-400">
                 Are you sure you want to remove{" "}
@@ -1343,7 +1374,7 @@ export default function DashboardPage() {
               </p>
             </div>
 
-            <div className="px-6 py-6">
+            <div className="relative px-6 py-6">
               <div className="rounded-2xl border border-red-500/20 bg-red-500/10 p-4">
                 <p className="text-sm text-red-200">
                   This will immediately update your dashboard totals, progress bars,
@@ -1352,11 +1383,11 @@ export default function DashboardPage() {
               </div>
             </div>
 
-            <div className="flex flex-col-reverse gap-3 border-t border-white/10 px-6 py-5 sm:flex-row sm:justify-end">
+            <div className="relative flex flex-col-reverse gap-3 border-t border-white/10 px-6 py-5 sm:flex-row sm:justify-end">
               <button
                 onClick={handleCancelDeleteFood}
                 disabled={isConfirmDeleting}
-                className="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-2.5 text-sm font-medium text-white transition hover:bg-white/[0.08] disabled:cursor-not-allowed disabled:opacity-60"
+                className="rounded-xl border border-white/10 bg-white/[0.05] px-4 py-2.5 text-sm font-medium text-white transition hover:bg-white/[0.08] disabled:cursor-not-allowed disabled:opacity-60"
               >
                 Cancel
               </button>
@@ -1375,11 +1406,11 @@ export default function DashboardPage() {
 
       {showWelcomeModal && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/80 px-4">
-          <div className="relative w-full max-w-3xl overflow-hidden rounded-[32px] border border-white/10 bg-[#0d0d12] shadow-[0_30px_120px_rgba(0,0,0,0.65)]">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.10),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.06),transparent_30%)]" />
+          <div className="relative w-full max-w-3xl overflow-hidden rounded-[32px] border border-white/10 bg-[#0d1018] shadow-[0_30px_120px_rgba(0,0,0,0.65)]">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(37,99,235,0.14),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(59,130,246,0.08),transparent_30%)]" />
 
             <div className="relative border-b border-white/10 px-6 py-6 md:px-8 md:py-7">
-              <p className="text-sm uppercase tracking-[0.28em] text-zinc-500">
+              <p className="text-sm uppercase tracking-[0.28em] text-[#60A5FA]/65">
                 LiftLog
               </p>
 
@@ -1440,7 +1471,7 @@ export default function DashboardPage() {
 
               <button
                 onClick={handleStartOnboarding}
-                className="rounded-2xl bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-zinc-200"
+                className="rounded-2xl bg-[#1D4ED8] px-6 py-3 text-sm font-semibold text-white shadow-[0_0_18px_rgba(37,99,235,0.24)] transition hover:bg-[#2563EB]"
               >
                 Set Up My Goals
               </button>
