@@ -1049,7 +1049,7 @@ export default function DashboardPage() {
     return {
       headline: "You’re moving in the right direction.",
       description: "Keep logging consistently and adjust as needed.",
-      };
+    };
   }, [
     savedCalories,
     savedCalorieGoal,
@@ -1100,20 +1100,24 @@ export default function DashboardPage() {
     return null;
   }
 
+  const shellClass =
+    "[&>*]:rounded-3xl [&>*]:border [&>*]:border-[#60A5FA]/18 [&>*]:bg-[linear-gradient(180deg,rgba(14,20,36,0.96),rgba(7,10,18,0.98))] [&>*]:shadow-[0_22px_60px_rgba(0,0,0,0.35)] [&>*]:backdrop-blur-xl";
+
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-[#04070d] text-white">
       <div className="relative min-h-screen overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(37,99,235,0.28),transparent_30%),radial-gradient(circle_at_82%_18%,rgba(59,130,246,0.18),transparent_28%),radial-gradient(circle_at_50%_55%,rgba(29,78,216,0.10),transparent_34%),radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.03),transparent_30%)]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/62 to-black/88" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(59,130,246,0.24),transparent_26%),radial-gradient(circle_at_82%_16%,rgba(96,165,250,0.16),transparent_24%),radial-gradient(circle_at_50%_40%,rgba(37,99,235,0.12),transparent_34%),radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.03),transparent_30%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/18 via-[#03060d]/70 to-black/90" />
         <div className="absolute inset-0 opacity-[0.05] [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:80px_80px]" />
 
-       <div className="absolute -left-32 top-12 h-[520px] w-[520px] rounded-full bg-[#2563EB]/26 blur-[190px]" />
-       <div className="absolute right-[-80px] top-[120px] h-[460px] w-[460px] rounded-full bg-[#1D4ED8]/18 blur-[190px]" />
-       <div className="absolute bottom-[-40px] left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-[#1E3A8A]/14 blur-[190px]" />
+        <div className="absolute -left-24 top-8 h-[560px] w-[560px] rounded-full bg-[#2563EB]/22 blur-[200px]" />
+        <div className="absolute right-[-80px] top-20 h-[520px] w-[520px] rounded-full bg-[#3B82F6]/14 blur-[210px]" />
+        <div className="absolute bottom-[-60px] left-1/2 h-[440px] w-[440px] -translate-x-1/2 rounded-full bg-[#1D4ED8]/12 blur-[200px]" />
+
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-8 md:px-8 md:py-10">
           <div className="mb-8 flex flex-col gap-5 md:mb-10 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="mb-2 text-sm uppercase tracking-[0.22em] text-[#60A5FA]/70">
+              <p className="mb-2 text-sm uppercase tracking-[0.28em] text-[#60A5FA]/75">
                 LiftLog
               </p>
               <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">
@@ -1125,23 +1129,23 @@ export default function DashboardPage() {
             </div>
 
             <div className="grid grid-cols-3 gap-3">
-              <div className="min-w-[110px] rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.22)] backdrop-blur-sm">
+              <div className="min-w-[110px] rounded-2xl border border-[#60A5FA]/18 bg-[linear-gradient(180deg,rgba(15,23,42,0.95),rgba(10,14,24,0.98))] px-4 py-3 shadow-[0_18px_45px_rgba(0,0,0,0.32)] backdrop-blur-sm">
                 <p className="text-xs text-zinc-500">Calories</p>
-                <p className="text-lg font-semibold">{formatMacro(savedCalories)}</p>
+                <p className="text-lg font-semibold text-white">{formatMacro(savedCalories)}</p>
                 <p className="mt-1 text-xs text-zinc-500">
                   of {formatMacro(savedCalorieGoal)}
                 </p>
               </div>
-              <div className="min-w-[110px] rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.22)] backdrop-blur-sm">
+              <div className="min-w-[110px] rounded-2xl border border-[#60A5FA]/18 bg-[linear-gradient(180deg,rgba(15,23,42,0.95),rgba(10,14,24,0.98))] px-4 py-3 shadow-[0_18px_45px_rgba(0,0,0,0.32)] backdrop-blur-sm">
                 <p className="text-xs text-zinc-500">Protein</p>
-                <p className="text-lg font-semibold">{formatMacro(savedProtein)}g</p>
+                <p className="text-lg font-semibold text-white">{formatMacro(savedProtein)}g</p>
                 <p className="mt-1 text-xs text-zinc-500">
                   of {formatMacro(savedProteinGoal)}g
                 </p>
               </div>
-              <div className="min-w-[110px] rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.22)] backdrop-blur-sm">
+              <div className="min-w-[110px] rounded-2xl border border-[#60A5FA]/18 bg-[linear-gradient(180deg,rgba(15,23,42,0.95),rgba(10,14,24,0.98))] px-4 py-3 shadow-[0_18px_45px_rgba(0,0,0,0.32)] backdrop-blur-sm">
                 <p className="text-xs text-zinc-500">Weight</p>
-                <p className="text-lg font-semibold">
+                <p className="text-lg font-semibold text-white">
                   {formatMacro(savedCurrentWeight)} lbs
                 </p>
                 <p className="mt-1 text-xs text-zinc-500">
@@ -1156,7 +1160,7 @@ export default function DashboardPage() {
               className={`mb-6 rounded-2xl border px-4 py-3 text-sm md:text-base ${
                 messageType === "error"
                   ? "border-red-500/30 bg-red-500/10 text-red-300"
-                  : "border-blue-500/20 bg-blue-500/10 text-blue-200"
+                  : "border-[#60A5FA]/20 bg-[#2563EB]/10 text-[#BFDBFE]"
               }`}
             >
               {messageText}
@@ -1164,14 +1168,14 @@ export default function DashboardPage() {
           )}
 
           {isDashboardLoading && (
-            <div className="mb-6 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-zinc-400 backdrop-blur-sm">
+            <div className="mb-6 rounded-2xl border border-[#60A5FA]/18 bg-[linear-gradient(180deg,rgba(15,23,42,0.95),rgba(10,14,24,0.98))] px-4 py-3 text-sm text-zinc-400 backdrop-blur-sm">
               Loading dashboard data...
             </div>
           )}
 
           <div className="grid gap-6 lg:grid-cols-12">
             <div className="space-y-6 lg:col-span-7">
-              <section className="rounded-3xl border border-white/10 bg-white/[0.05] shadow-[0_20px_50px_rgba(0,0,0,0.28)] backdrop-blur-xl">
+              <section className="rounded-3xl border border-[#60A5FA]/18 bg-[linear-gradient(180deg,rgba(15,23,42,0.95),rgba(10,14,24,0.98))] shadow-[0_22px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl">
                 <div className="p-6 md:p-7">
                   <div className="mb-5">
                     <h2 className="text-xl font-semibold text-white md:text-2xl">
@@ -1183,7 +1187,7 @@ export default function DashboardPage() {
                   </div>
 
                   <div className="space-y-4">
-                    <div className="rounded-2xl border border-white/10 bg-[linear-gradient(180deg,rgba(37,99,235,0.08),rgba(255,255,255,0.03))] p-4">
+                    <div className="rounded-2xl border border-[#60A5FA]/14 bg-[linear-gradient(90deg,rgba(37,99,235,0.12),rgba(255,255,255,0.03),rgba(37,99,235,0.08))] p-4">
                       <p className="text-lg font-semibold text-white">
                         {progressTone.headline}
                       </p>
@@ -1193,23 +1197,23 @@ export default function DashboardPage() {
                     </div>
 
                     <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-                      <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+                      <div className="rounded-2xl border border-[#60A5FA]/14 bg-white/[0.03] p-4">
                         <p className="text-xs text-zinc-500">Meals Logged Today</p>
                         <p className="mt-1 text-xl font-semibold">{todayFoodLogs.length}</p>
                       </div>
-                      <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+                      <div className="rounded-2xl border border-[#60A5FA]/14 bg-white/[0.03] p-4">
                         <p className="text-xs text-zinc-500">Calories Left</p>
                         <p className="mt-1 text-xl font-semibold">
                           {formatMacro(caloriesRemaining)}
                         </p>
                       </div>
-                      <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+                      <div className="rounded-2xl border border-[#60A5FA]/14 bg-white/[0.03] p-4">
                         <p className="text-xs text-zinc-500">Protein Left</p>
                         <p className="mt-1 text-xl font-semibold">
                           {formatMacro(proteinRemaining)}g
                         </p>
                       </div>
-                      <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+                      <div className="rounded-2xl border border-[#60A5FA]/14 bg-white/[0.03] p-4">
                         <p className="text-xs text-zinc-500">Current Weight</p>
                         <p className="mt-1 text-xl font-semibold">
                           {formatMacro(savedCurrentWeight)} lbs
@@ -1220,7 +1224,7 @@ export default function DashboardPage() {
                 </div>
               </section>
 
-              <div className="[&>*]:rounded-3xl [&>*]:border [&>*]:border-white/10 [&>*]:bg-white/[0.05] [&>*]:shadow-[0_20px_50px_rgba(0,0,0,0.24)] [&>*]:backdrop-blur-xl">
+              <div className={shellClass}>
                 <LogFoodCard
                   foodName={foodName}
                   setFoodName={setFoodName}
@@ -1228,7 +1232,7 @@ export default function DashboardPage() {
                 />
               </div>
 
-              <div className="[&>*]:rounded-3xl [&>*]:border [&>*]:border-white/10 [&>*]:bg-white/[0.05] [&>*]:shadow-[0_20px_50px_rgba(0,0,0,0.24)] [&>*]:backdrop-blur-xl">
+              <div className={shellClass}>
                 <RecentFoodEntriesCard
                   recentEntries={recentEntries}
                   onEditFood={handleEditFood}
@@ -1237,11 +1241,11 @@ export default function DashboardPage() {
                 />
               </div>
 
-              <div className="[&>*]:rounded-3xl [&>*]:border [&>*]:border-white/10 [&>*]:bg-white/[0.05] [&>*]:shadow-[0_20px_50px_rgba(0,0,0,0.24)] [&>*]:backdrop-blur-xl">
+              <div className={shellClass}>
                 <FoodHistory historyDays={historyDays} />
               </div>
 
-              <div className="[&>*]:rounded-3xl [&>*]:border [&>*]:border-white/10 [&>*]:bg-white/[0.05] [&>*]:shadow-[0_20px_50px_rgba(0,0,0,0.24)] [&>*]:backdrop-blur-xl">
+              <div className={shellClass}>
                 <GoalsOverviewCard
                   savedCalorieGoal={round1(savedCalorieGoal)}
                   savedProteinGoal={round1(savedProteinGoal)}
@@ -1251,11 +1255,11 @@ export default function DashboardPage() {
                 />
               </div>
 
-              <div className="[&>*]:rounded-3xl [&>*]:border [&>*]:border-white/10 [&>*]:bg-white/[0.05] [&>*]:shadow-[0_20px_50px_rgba(0,0,0,0.24)] [&>*]:backdrop-blur-xl">
+              <div className={shellClass}>
                 <UpdateGoalsCard onOpen={() => setShowGoalsModal(true)} />
               </div>
 
-              <div className="[&>*]:rounded-3xl [&>*]:border [&>*]:border-white/10 [&>*]:bg-white/[0.05] [&>*]:shadow-[0_20px_50px_rgba(0,0,0,0.24)] [&>*]:backdrop-blur-xl">
+              <div className={shellClass}>
                 <WeightTrackingCard
                   savedCurrentWeight={round1(savedCurrentWeight)}
                   savedWeightGoal={round1(savedWeightGoal)}
@@ -1265,7 +1269,7 @@ export default function DashboardPage() {
             </div>
 
             <div className="space-y-6 lg:col-span-5">
-              <div className="[&>*]:rounded-3xl [&>*]:border [&>*]:border-white/10 [&>*]:bg-white/[0.05] [&>*]:shadow-[0_20px_50px_rgba(0,0,0,0.24)] [&>*]:backdrop-blur-xl">
+              <div className={shellClass}>
                 <TodaySummaryCard
                   recentEntriesCount={todayFoodLogs.length}
                   caloriesRemaining={caloriesRemaining}
@@ -1274,14 +1278,14 @@ export default function DashboardPage() {
                 />
               </div>
 
-              <div className="[&>*]:rounded-3xl [&>*]:border [&>*]:border-white/10 [&>*]:bg-white/[0.05] [&>*]:shadow-[0_20px_50px_rgba(0,0,0,0.24)] [&>*]:backdrop-blur-xl">
+              <div className={shellClass}>
                 <SmartComboMealsCard
                   smartCombos={smartCombos}
                   onAddCombo={handleAddCombo}
                 />
               </div>
 
-              <div className="[&>*]:rounded-3xl [&>*]:border [&>*]:border-white/10 [&>*]:bg-white/[0.05] [&>*]:shadow-[0_20px_50px_rgba(0,0,0,0.24)] [&>*]:backdrop-blur-xl">
+              <div className={shellClass}>
                 <DailyProgressCard
                   savedCalories={round1(savedCalories)}
                   savedCalorieGoal={round1(savedCalorieGoal)}
@@ -1298,7 +1302,7 @@ export default function DashboardPage() {
                 />
               </div>
 
-              <div className="[&>*]:rounded-3xl [&>*]:border [&>*]:border-white/10 [&>*]:bg-white/[0.05] [&>*]:shadow-[0_20px_50px_rgba(0,0,0,0.24)] [&>*]:backdrop-blur-xl">
+              <div className={shellClass}>
                 <AccountCard />
               </div>
             </div>
@@ -1363,8 +1367,8 @@ export default function DashboardPage() {
 
       {showDeleteModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-4">
-          <div className="relative w-full max-w-md overflow-hidden rounded-3xl border border-white/10 bg-[#0d1018] shadow-[0_30px_120px_rgba(0,0,0,0.65)]">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(37,99,235,0.12),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(59,130,246,0.08),transparent_30%)]" />
+          <div className="relative w-full max-w-md overflow-hidden rounded-3xl border border-[#60A5FA]/18 bg-[linear-gradient(180deg,rgba(15,23,42,0.98),rgba(10,14,24,0.98))] shadow-[0_30px_120px_rgba(0,0,0,0.65)]">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(37,99,235,0.16),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(59,130,246,0.10),transparent_30%)]" />
 
             <div className="relative border-b border-white/10 px-6 py-5">
               <h2 className="text-2xl font-semibold text-white">Delete Logged Meal</h2>
@@ -1406,11 +1410,11 @@ export default function DashboardPage() {
 
       {showWelcomeModal && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/80 px-4">
-          <div className="relative w-full max-w-3xl overflow-hidden rounded-[32px] border border-white/10 bg-[#0d1018] shadow-[0_30px_120px_rgba(0,0,0,0.65)]">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(37,99,235,0.14),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(59,130,246,0.08),transparent_30%)]" />
+          <div className="relative w-full max-w-3xl overflow-hidden rounded-[32px] border border-[#60A5FA]/18 bg-[linear-gradient(180deg,rgba(15,23,42,0.98),rgba(10,14,24,0.98))] shadow-[0_30px_120px_rgba(0,0,0,0.65)]">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(37,99,235,0.18),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(59,130,246,0.10),transparent_30%)]" />
 
             <div className="relative border-b border-white/10 px-6 py-6 md:px-8 md:py-7">
-              <p className="text-sm uppercase tracking-[0.28em] text-[#60A5FA]/65">
+              <p className="text-sm uppercase tracking-[0.28em] text-[#60A5FA]/75">
                 LiftLog
               </p>
 
@@ -1471,7 +1475,7 @@ export default function DashboardPage() {
 
               <button
                 onClick={handleStartOnboarding}
-                className="rounded-2xl bg-[#1D4ED8] px-6 py-3 text-sm font-semibold text-white shadow-[0_0_18px_rgba(37,99,235,0.24)] transition hover:bg-[#2563EB]"
+                className="rounded-2xl bg-[#2563EB] px-6 py-3 text-sm font-semibold text-white shadow-[0_0_22px_rgba(37,99,235,0.30)] transition hover:bg-[#3B82F6]"
               >
                 Set Up My Goals
               </button>
