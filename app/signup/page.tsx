@@ -60,65 +60,82 @@ export default function SignupPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.08),_transparent_35%),linear-gradient(to_bottom,_#09090b,_#000000)] text-white flex items-center justify-center px-4">
-      <div className="w-full max-w-md rounded-3xl border border-white/10 bg-white/[0.04] p-8 shadow-[0_10px_40px_rgba(0,0,0,0.35)] backdrop-blur-sm">
-        <p className="text-sm uppercase tracking-[0.22em] text-zinc-500 mb-2">
-          LiftLog
-        </p>
+    <main className="min-h-screen bg-black text-white">
+      <div className="relative min-h-screen overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_24%,rgba(37,99,235,0.14),transparent_30%),radial-gradient(circle_at_80%_20%,rgba(59,130,246,0.10),transparent_26%),radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.03),transparent_30%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/70 to-black/90" />
+        <div className="absolute inset-0 opacity-[0.04] [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:80px_80px]" />
 
-        <h1 className="text-4xl font-semibold tracking-tight">Sign Up</h1>
-        <p className="mt-3 text-zinc-400">
-          Create your account and start tracking your nutrition.
-        </p>
+        <div className="absolute -left-24 top-20 h-[320px] w-[320px] rounded-full bg-[#2563EB]/16 blur-[140px]" />
+        <div className="absolute bottom-0 right-[-40px] h-[320px] w-[320px] rounded-full bg-[#1D4ED8]/14 blur-[150px]" />
 
-        {message && (
-          <div className="mt-5 rounded-2xl border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-300">
-            {message}
-          </div>
-        )}
+        <div className="relative z-10 flex min-h-screen items-center justify-center px-4 py-10">
+          <div className="w-full max-w-md rounded-[32px] border border-white/10 bg-white/[0.04] p-8 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl">
+            <p className="mb-3 text-sm uppercase tracking-[0.28em] text-[#60A5FA]/70">
+              LiftLog
+            </p>
 
-        <div className="mt-6 space-y-4">
-          <div>
-            <label className="mb-2 block text-sm font-medium text-zinc-300">
-              Email
-            </label>
-            <input
-              type="email"
-              placeholder="you@example.com"
-              className="w-full rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 text-white outline-none transition focus:border-white/20"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
+            <h1 className="text-5xl font-semibold tracking-tight text-white">
+              Sign Up
+            </h1>
 
-          <div>
-            <label className="mb-2 block text-sm font-medium text-zinc-300">
-              Password
-            </label>
-            <input
-              type="password"
-              placeholder="At least 6 characters"
-              className="w-full rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 text-white outline-none transition focus:border-white/20"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
+            <p className="mt-3 text-lg leading-7 text-white/65">
+              Create your account and start tracking your nutrition.
+            </p>
+
+            {message && (
+              <div className="mt-5 rounded-2xl border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-300">
+                {message}
+              </div>
+            )}
+
+            <div className="mt-8 space-y-5">
+              <div>
+                <label className="mb-2 block text-sm font-medium text-white/80">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  placeholder="you@example.com"
+                  className="w-full rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-4 text-lg text-white outline-none transition placeholder:text-white/30 focus:border-[#3B82F6]/50 focus:bg-white/[0.06]"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+
+              <div>
+                <label className="mb-2 block text-sm font-medium text-white/80">
+                  Password
+                </label>
+                <input
+                  type="password"
+                  placeholder="At least 6 characters"
+                  className="w-full rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-4 text-lg text-white outline-none transition placeholder:text-white/30 focus:border-[#3B82F6]/50 focus:bg-white/[0.06]"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
+            </div>
+
+            <button
+              onClick={handleSignup}
+              disabled={isSubmitting}
+              className="mt-7 w-full rounded-2xl bg-[#1D4ED8] px-4 py-4 text-lg font-semibold text-white shadow-[0_0_18px_rgba(37,99,235,0.24)] transition hover:bg-[#2563EB] disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              {isSubmitting ? "Creating Account..." : "Create Account"}
+            </button>
+
+            <p className="mt-6 text-base text-white/55">
+              Already have an account?{" "}
+              <Link
+                href="/login"
+                className="text-white underline underline-offset-4 transition hover:text-[#60A5FA]"
+              >
+                Log in
+              </Link>
+            </p>
           </div>
         </div>
-
-        <button
-          onClick={handleSignup}
-          disabled={isSubmitting}
-          className="mt-6 w-full rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-black transition hover:bg-zinc-200 disabled:cursor-not-allowed disabled:opacity-60"
-        >
-          {isSubmitting ? "Creating Account..." : "Create Account"}
-        </button>
-
-        <p className="mt-5 text-sm text-zinc-400">
-          Already have an account?{" "}
-          <Link href="/login" className="text-white underline underline-offset-4">
-            Log in
-          </Link>
-        </p>
       </div>
     </main>
   );
