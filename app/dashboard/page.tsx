@@ -1167,7 +1167,7 @@ export default function DashboardPage() {
               <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">
                 Dashboard
               </h1>
-              <p className="mt-3 max-w-2xl text-zinc-400">
+              <p className="mt-3 max-w-2xl text-[#9DB7D8]">
                 Track your nutrition, daily progress, and body weight in one clean place.
               </p>
             </div>
@@ -1175,33 +1175,33 @@ export default function DashboardPage() {
             <div className="grid grid-cols-3 gap-3">
               <div className="relative overflow-hidden rounded-[22px] border border-[#0B65B8] bg-[#04070d] px-4 py-3 shadow-[0_20px_50px_rgba(0,0,0,0.50)]">
                 <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(86,204,255,0.16),transparent_30%)]" />
-                <p className="relative text-xs text-zinc-500">Calories</p>
+                <p className="relative text-xs text-[#6F8FAF]">Calories</p>
                 <p className="relative text-lg font-semibold">
                   <NeonMetricValue>{formatMacro(savedCalories)}</NeonMetricValue>
                 </p>
-                <p className="relative mt-1 text-xs text-zinc-500">
+                <p className="relative mt-1 text-xs text-[#6F8FAF]">
                   of {formatMacro(savedCalorieGoal)}
                 </p>
               </div>
 
               <div className="relative overflow-hidden rounded-[22px] border border-[#0B65B8] bg-[#04070d] px-4 py-3 shadow-[0_20px_50px_rgba(0,0,0,0.50)]">
                 <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(86,204,255,0.16),transparent_30%)]" />
-                <p className="relative text-xs text-zinc-500">Protein</p>
+                <p className="relative text-xs text-[#6F8FAF]">Protein</p>
                 <p className="relative text-lg font-semibold">
                   <NeonMetricValue>{formatMacro(savedProtein)}g</NeonMetricValue>
                 </p>
-                <p className="relative mt-1 text-xs text-zinc-500">
+                <p className="relative mt-1 text-xs text-[#6F8FAF]">
                   of {formatMacro(savedProteinGoal)}g
                 </p>
               </div>
 
               <div className="relative overflow-hidden rounded-[22px] border border-[#0B65B8] bg-[#04070d] px-4 py-3 shadow-[0_20px_50px_rgba(0,0,0,0.50)]">
                 <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(86,204,255,0.16),transparent_30%)]" />
-                <p className="relative text-xs text-zinc-500">Weight</p>
+                <p className="relative text-xs text-[#6F8FAF]">Weight</p>
                 <p className="relative text-lg font-semibold">
                   <NeonMetricValue>{formatMacro(savedCurrentWeight)} lbs</NeonMetricValue>
                 </p>
-                <p className="relative mt-1 text-xs text-zinc-500">
+                <p className="relative mt-1 text-xs text-[#6F8FAF]">
                   goal {formatMacro(savedWeightGoal)}
                 </p>
               </div>
@@ -1209,19 +1209,21 @@ export default function DashboardPage() {
           </div>
 
           {messageText && (
-            <div
-              className={`mb-6 rounded-2xl border px-4 py-3 text-sm md:text-base ${
-                messageType === "error"
-                  ? "border-red-500/30 bg-red-500/10 text-red-300"
-                  : "border-[#0B65B8] bg-[#07111d] text-[#b8e7ff]"
-              }`}
-            >
-              {messageText}
+            <div className="fixed right-4 top-4 z-[100] md:right-6 md:top-6">
+              <div
+                className={`min-w-[260px] max-w-sm rounded-2xl border px-4 py-3 text-sm shadow-[0_20px_50px_rgba(0,0,0,0.45)] backdrop-blur-xl transition-all duration-200 md:text-base ${
+                  messageType === "error"
+                    ? "border-red-500/30 bg-[#1a0b0b]/90 text-red-300"
+                    : "border-[#0B65B8] bg-[#07111d]/90 text-[#b8e7ff]"
+                }`}
+              >
+                {messageText}
+              </div>
             </div>
           )}
 
           {isDashboardLoading && (
-            <div className="mb-6 rounded-2xl border border-[#0B65B8] bg-[#04070d] px-4 py-3 text-sm text-zinc-400 shadow-[0_20px_50px_rgba(0,0,0,0.48)]">
+            <div className="mb-6 rounded-2xl border border-[#0B65B8] bg-[#04070d] px-4 py-3 text-sm text-[#9DB7D8] shadow-[0_20px_50px_rgba(0,0,0,0.48)]">
               Loading dashboard data...
             </div>
           )}
@@ -1234,7 +1236,7 @@ export default function DashboardPage() {
                     <h2 className="text-xl font-semibold text-white md:text-2xl">
                       Day at a Glance
                     </h2>
-                    <p className="mt-1 text-sm text-zinc-400">
+                    <p className="mt-1 text-sm text-[#9DB7D8]">
                       Live dashboard feedback based on today’s logs only.
                     </p>
                   </div>
@@ -1244,30 +1246,30 @@ export default function DashboardPage() {
                       <p className="text-lg font-semibold text-white">
                         {progressTone.headline}
                       </p>
-                      <p className="mt-2 text-sm text-zinc-400">
+                      <p className="mt-2 text-sm text-[#9DB7D8]">
                         {progressTone.description}
                       </p>
                     </div>
 
                     <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
                       <div className="rounded-2xl border border-[#0B65B8] bg-[#080c14] p-4">
-                        <p className="text-xs text-zinc-500">Meals Logged Today</p>
+                        <p className="text-xs text-[#6F8FAF]">Meals Logged Today</p>
                         <p className="mt-1 text-xl font-semibold">{todayFoodLogs.length}</p>
                       </div>
                       <div className="rounded-2xl border border-[#0B65B8] bg-[#080c14] p-4">
-                        <p className="text-xs text-zinc-500">Calories Left</p>
+                        <p className="text-xs text-[#6F8FAF]">Calories Left</p>
                         <p className="mt-1 text-xl font-semibold">
                           {formatMacro(caloriesRemaining)}
                         </p>
                       </div>
                       <div className="rounded-2xl border border-[#0B65B8] bg-[#080c14] p-4">
-                        <p className="text-xs text-zinc-500">Protein Left</p>
+                        <p className="text-xs text-[#6F8FAF]">Protein Left</p>
                         <p className="mt-1 text-xl font-semibold">
                           {formatMacro(proteinRemaining)}g
                         </p>
                       </div>
                       <div className="rounded-2xl border border-[#0B65B8] bg-[#080c14] p-4">
-                        <p className="text-xs text-zinc-500">Current Weight</p>
+                        <p className="text-xs text-[#6F8FAF]">Current Weight</p>
                         <p className="mt-1 text-xl font-semibold">
                           {formatMacro(savedCurrentWeight)} lbs
                         </p>
@@ -1323,12 +1325,7 @@ export default function DashboardPage() {
 
             <div className="space-y-6 lg:col-span-5">
               <DashboardPanel variant="primary">
-                <TodaySummaryCard
-                  recentEntriesCount={todayFoodLogs.length}
-                  caloriesRemaining={caloriesRemaining}
-                  proteinRemaining={proteinRemaining}
-                  savedCurrentWeight={savedCurrentWeight}
-                />
+                <TodaySummaryCard />
               </DashboardPanel>
 
               <DashboardPanel variant="primary">
@@ -1425,7 +1422,7 @@ export default function DashboardPage() {
 
             <div className="relative border-b border-white/10 px-6 py-5">
               <h2 className="text-2xl font-semibold text-white">Delete Logged Meal</h2>
-              <p className="mt-2 text-sm text-zinc-400">
+              <p className="mt-2 text-sm text-[#9DB7D8]">
                 Are you sure you want to remove{" "}
                 <span className="font-medium text-white">“{foodToDeleteName}”</span>?
               </p>
@@ -1475,7 +1472,7 @@ export default function DashboardPage() {
                 <h2 className="text-3xl font-semibold tracking-tight text-white md:text-5xl">
                   Welcome to LiftLog
                 </h2>
-                <p className="mt-4 max-w-xl text-base leading-7 text-zinc-300 md:text-lg">
+                <p className="mt-4 max-w-xl text-base leading-7 text-[#9DB7D8] md:text-lg">
                   Your nutrition dashboard is ready. Let’s personalize it in under a
                   minute so your calories, macros, goal weight, and current weight are
                   all set from day one.
@@ -1486,35 +1483,35 @@ export default function DashboardPage() {
             <div className="relative px-6 py-6 md:px-8 md:py-8">
               <div className="grid gap-4 md:grid-cols-3">
                 <div className="rounded-2xl border border-[#0B65B8] bg-[#080c14] p-5">
-                  <p className="text-sm font-semibold uppercase tracking-[0.14em] text-zinc-400">
+                  <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#6F8FAF]">
                     Track Smarter
                   </p>
-                  <p className="mt-3 text-sm leading-6 text-zinc-300">
+                  <p className="mt-3 text-sm leading-6 text-[#9DB7D8]">
                     See calories and macros update instantly every time you log a meal.
                   </p>
                 </div>
 
                 <div className="rounded-2xl border border-[#0B65B8] bg-[#080c14] p-5">
-                  <p className="text-sm font-semibold uppercase tracking-[0.14em] text-zinc-400">
+                  <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#6F8FAF]">
                     Stay on Target
                   </p>
-                  <p className="mt-3 text-sm leading-6 text-zinc-300">
+                  <p className="mt-3 text-sm leading-6 text-[#9DB7D8]">
                     Compare your daily intake against your calorie, macro, and weight goals.
                   </p>
                 </div>
 
                 <div className="rounded-2xl border border-[#0B65B8] bg-[#080c14] p-5">
-                  <p className="text-sm font-semibold uppercase tracking-[0.14em] text-zinc-400">
+                  <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[#6F8FAF]">
                     Eat with Direction
                   </p>
-                  <p className="mt-3 text-sm leading-6 text-zinc-300">
+                  <p className="mt-3 text-sm leading-6 text-[#9DB7D8]">
                     Get meal suggestions based on what your body still needs today.
                   </p>
                 </div>
               </div>
 
               <div className="mt-6 rounded-2xl border border-[#0B65B8] bg-[#080c14] px-5 py-4">
-                <p className="text-sm text-zinc-300 md:text-base">
+                <p className="text-sm text-[#9DB7D8] md:text-base">
                   First, we’ll set your calorie target, macro goals, goal weight, and
                   current weight. After that, your dashboard will be fully personalized.
                 </p>
@@ -1522,7 +1519,7 @@ export default function DashboardPage() {
             </div>
 
             <div className="relative flex flex-col gap-3 border-t border-white/10 px-6 py-5 md:flex-row md:items-center md:justify-between md:px-8">
-              <p className="text-sm text-zinc-500">Setup takes less than a minute.</p>
+              <p className="text-sm text-[#6F8FAF]">Setup takes less than a minute.</p>
 
               <button
                 onClick={handleStartOnboarding}
