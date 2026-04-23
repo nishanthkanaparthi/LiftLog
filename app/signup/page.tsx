@@ -76,19 +76,22 @@ export default function SignupPage() {
   };
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-[#020409] text-white">
       <div className="relative min-h-screen overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_24%,rgba(37,99,235,0.14),transparent_30%),radial-gradient(circle_at_80%_20%,rgba(59,130,246,0.10),transparent_26%),radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.03),transparent_30%)]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/70 to-black/90" />
-        <div className="absolute inset-0 opacity-[0.04] [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:80px_80px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,#020409_0%,#04070d_35%,#020409_100%)]" />
 
-        <div className="absolute -left-24 top-20 h-[320px] w-[320px] rounded-full bg-[#2563EB]/16 blur-[140px]" />
-        <div className="absolute bottom-0 right-[-40px] h-[320px] w-[320px] rounded-full bg-[#1D4ED8]/14 blur-[150px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_18%,rgba(58,132,255,0.24),transparent_22%),radial-gradient(circle_at_84%_15%,rgba(44,110,255,0.20),transparent_18%),radial-gradient(circle_at_82%_62%,rgba(46,120,255,0.17),transparent_22%),radial-gradient(circle_at_18%_78%,rgba(53,103,255,0.17),transparent_24%)]" />
+        <div className="absolute inset-y-0 left-[5%] w-[320px] bg-[#216dff]/[0.12] blur-[150px]" />
+        <div className="absolute inset-y-0 right-[5%] w-[320px] bg-[#1d5fff]/[0.12] blur-[150px]" />
+        <div className="absolute top-[150px] left-[9%] h-[320px] w-[320px] rounded-full bg-[#2b7dff]/[0.14] blur-[165px]" />
+        <div className="absolute top-[220px] right-[8%] h-[320px] w-[320px] rounded-full bg-[#2a5fff]/[0.14] blur-[165px]" />
+        <div className="absolute bottom-[100px] left-[25%] h-[260px] w-[260px] rounded-full bg-[#3a7fff]/[0.11] blur-[155px]" />
+        <div className="absolute bottom-[110px] right-[20%] h-[260px] w-[260px] rounded-full bg-[#355dff]/[0.11] blur-[155px]" />
 
         <div className="relative z-10 flex min-h-screen items-center justify-center px-4 py-8">
-          <div className="grid w-full max-w-5xl overflow-hidden rounded-[36px] border border-white/10 bg-white/[0.04] shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl md:grid-cols-2">
-            <div className="border-b border-white/10 p-8 md:border-b-0 md:border-r md:p-10">
-              <p className="text-sm uppercase tracking-[0.28em] text-white/35">
+          <div className="grid w-full max-w-5xl overflow-hidden rounded-[36px] border border-[#0B65B8] bg-[#04070d] shadow-[0_30px_100px_rgba(0,0,0,0.55)] md:grid-cols-2">
+            <div className="border-b border-[#0B65B8] p-8 md:border-b-0 md:border-r md:p-10">
+              <p className="text-sm uppercase tracking-[0.28em] text-[#73CCFF]/80">
                 LiftLog
               </p>
 
@@ -96,21 +99,21 @@ export default function SignupPage() {
                 Build disciplined progress.
               </h1>
 
-              <p className="mt-5 max-w-lg text-base leading-8 text-white/60">
+              <p className="mt-5 max-w-lg text-base leading-8 text-[#9DB7D8]">
                 Create your account and start tracking calories, macros, weight,
                 and smarter food suggestions from one clean dashboard.
               </p>
 
               <div className="mt-8 space-y-4">
-                <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-5">
-                  <p className="text-sm text-white/35">Track daily calories</p>
+                <div className="rounded-3xl border border-[#0B65B8] bg-[#080c14] p-5">
+                  <p className="text-sm text-[#6F8FAF]">Track daily calories</p>
                   <p className="mt-2 text-xl font-semibold text-white">
                     Stay consistent every day
                   </p>
                 </div>
 
-                <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-5">
-                  <p className="text-sm text-white/35">
+                <div className="rounded-3xl border border-[#0B65B8] bg-[#080c14] p-5">
+                  <p className="text-sm text-[#6F8FAF]">
                     Personalized food suggestions
                   </p>
                   <p className="mt-2 text-xl font-semibold text-white">
@@ -118,8 +121,8 @@ export default function SignupPage() {
                   </p>
                 </div>
 
-                <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-5">
-                  <p className="text-sm text-white/35">Clean onboarding flow</p>
+                <div className="rounded-3xl border border-[#0B65B8] bg-[#080c14] p-5">
+                  <p className="text-sm text-[#6F8FAF]">Clean onboarding flow</p>
                   <p className="mt-2 text-xl font-semibold text-white">
                     Set goals and start immediately
                   </p>
@@ -132,7 +135,7 @@ export default function SignupPage() {
                 Create your account
               </h2>
 
-              <p className="mt-3 text-base leading-7 text-white/60">
+              <p className="mt-3 text-base leading-7 text-[#9DB7D8]">
                 Sign up to start tracking your goals, food, and progress.
               </p>
 
@@ -146,7 +149,7 @@ export default function SignupPage() {
                 <input
                   type="text"
                   placeholder="Full name"
-                  className="w-full rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-4 text-lg text-white outline-none transition placeholder:text-white/30 focus:border-[#3B82F6]/50 focus:bg-white/[0.06]"
+                  className="w-full rounded-2xl border border-[#0B65B8] bg-[#080c14] px-5 py-4 text-lg text-white outline-none transition placeholder:text-[#6F8FAF] focus:border-[#61BEFF]/50 focus:bg-[#0b1320]"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
@@ -154,7 +157,7 @@ export default function SignupPage() {
                 <input
                   type="email"
                   placeholder="Email"
-                  className="w-full rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-4 text-lg text-white outline-none transition placeholder:text-white/30 focus:border-[#3B82F6]/50 focus:bg-white/[0.06]"
+                  className="w-full rounded-2xl border border-[#0B65B8] bg-[#080c14] px-5 py-4 text-lg text-white outline-none transition placeholder:text-[#6F8FAF] focus:border-[#61BEFF]/50 focus:bg-[#0b1320]"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -162,7 +165,7 @@ export default function SignupPage() {
                 <input
                   type="password"
                   placeholder="Password"
-                  className="w-full rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-4 text-lg text-white outline-none transition placeholder:text-white/30 focus:border-[#3B82F6]/50 focus:bg-white/[0.06]"
+                  className="w-full rounded-2xl border border-[#0B65B8] bg-[#080c14] px-5 py-4 text-lg text-white outline-none transition placeholder:text-[#6F8FAF] focus:border-[#61BEFF]/50 focus:bg-[#0b1320]"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
@@ -170,7 +173,7 @@ export default function SignupPage() {
                 <input
                   type="password"
                   placeholder="Confirm password"
-                  className="w-full rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-4 text-lg text-white outline-none transition placeholder:text-white/30 focus:border-[#3B82F6]/50 focus:bg-white/[0.06]"
+                  className="w-full rounded-2xl border border-[#0B65B8] bg-[#080c14] px-5 py-4 text-lg text-white outline-none transition placeholder:text-[#6F8FAF] focus:border-[#61BEFF]/50 focus:bg-[#0b1320]"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                 />
@@ -179,16 +182,16 @@ export default function SignupPage() {
               <button
                 onClick={handleSignup}
                 disabled={isSubmitting}
-                className="mt-6 w-full rounded-2xl bg-white px-4 py-4 text-lg font-semibold text-black transition hover:bg-zinc-200 disabled:cursor-not-allowed disabled:opacity-60"
+                className="mt-6 w-full rounded-2xl border border-[#61BEFF]/40 bg-[#4CB4FF] px-4 py-4 text-lg font-semibold text-[#03111d] shadow-[0_0_26px_rgba(76,180,255,0.28)] transition hover:bg-[#76CAFF] disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {isSubmitting ? "Creating Account..." : "Sign Up"}
               </button>
 
-              <p className="mt-6 text-base text-white/55">
+              <p className="mt-6 text-base text-[#9DB7D8]">
                 Already have an account?{" "}
                 <Link
                   href="/login"
-                  className="text-white underline underline-offset-4 transition hover:text-[#60A5FA]"
+                  className="text-[#73CCFF] underline underline-offset-4 transition hover:text-[#9BD8FF]"
                 >
                   Log in
                 </Link>
