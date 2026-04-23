@@ -351,9 +351,9 @@ function DashboardPanel({
 
   return (
     <div className={`relative ${buttonClasses} [&_button]:transition`}>
-      <div className="pointer-events-none absolute -inset-2 rounded-[34px] bg-[radial-gradient(circle_at_top_left,rgba(92,196,255,0.20),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(55,154,255,0.18),transparent_38%)] blur-2xl" />
+      <div className="pointer-events-none absolute -inset-2 rounded-[34px] bg-[radial-gradient(circle_at_top_left,rgba(82,170,255,0.22),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(56,120,255,0.20),transparent_38%)] blur-2xl" />
       <div className="relative overflow-hidden rounded-[28px] border border-[#0B65B8] bg-[#04070d] shadow-[0_28px_70px_rgba(0,0,0,0.60)]">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(92,196,255,0.10),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(55,154,255,0.08),transparent_28%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(82,170,255,0.10),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(56,120,255,0.08),transparent_28%)]" />
         <div className="relative">{children}</div>
       </div>
     </div>
@@ -1150,13 +1150,13 @@ export default function DashboardPage() {
       <div className="relative min-h-screen overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(90deg,#020409_0%,#04070d_35%,#020409_100%)]" />
 
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_18%,rgba(59,189,255,0.22),transparent_22%),radial-gradient(circle_at_84%_15%,rgba(72,150,255,0.18),transparent_18%),radial-gradient(circle_at_82%_62%,rgba(47,170,255,0.16),transparent_22%),radial-gradient(circle_at_18%_78%,rgba(68,130,255,0.16),transparent_24%)]" />
-        <div className="absolute inset-y-0 left-[5%] w-[320px] bg-[#17a8ff]/[0.12] blur-[150px]" />
-        <div className="absolute inset-y-0 right-[5%] w-[320px] bg-[#1889ff]/[0.12] blur-[150px]" />
-        <div className="absolute top-[150px] left-[9%] h-[320px] w-[320px] rounded-full bg-[#27b8ff]/[0.14] blur-[165px]" />
-        <div className="absolute top-[220px] right-[8%] h-[320px] w-[320px] rounded-full bg-[#2787ff]/[0.14] blur-[165px]" />
-        <div className="absolute bottom-[100px] left-[25%] h-[260px] w-[260px] rounded-full bg-[#21c0ff]/[0.11] blur-[155px]" />
-        <div className="absolute bottom-[110px] right-[20%] h-[260px] w-[260px] rounded-full bg-[#2c7cff]/[0.11] blur-[155px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_18%,rgba(58,132,255,0.24),transparent_22%),radial-gradient(circle_at_84%_15%,rgba(44,110,255,0.20),transparent_18%),radial-gradient(circle_at_82%_62%,rgba(46,120,255,0.17),transparent_22%),radial-gradient(circle_at_18%_78%,rgba(53,103,255,0.17),transparent_24%)]" />
+        <div className="absolute inset-y-0 left-[5%] w-[320px] bg-[#216dff]/[0.12] blur-[150px]" />
+        <div className="absolute inset-y-0 right-[5%] w-[320px] bg-[#1d5fff]/[0.12] blur-[150px]" />
+        <div className="absolute top-[150px] left-[9%] h-[320px] w-[320px] rounded-full bg-[#2b7dff]/[0.14] blur-[165px]" />
+        <div className="absolute top-[220px] right-[8%] h-[320px] w-[320px] rounded-full bg-[#2a5fff]/[0.14] blur-[165px]" />
+        <div className="absolute bottom-[100px] left-[25%] h-[260px] w-[260px] rounded-full bg-[#3a7fff]/[0.11] blur-[155px]" />
+        <div className="absolute bottom-[110px] right-[20%] h-[260px] w-[260px] rounded-full bg-[#355dff]/[0.11] blur-[155px]" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-8 md:px-8 md:py-10">
           <div className="mb-8 flex flex-col gap-5 md:mb-10 md:flex-row md:items-end md:justify-between">
@@ -1421,7 +1421,7 @@ export default function DashboardPage() {
       {showDeleteModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 px-4">
           <div className="relative w-full max-w-md overflow-hidden rounded-[30px] border border-[#0B65B8] bg-[#04070d] shadow-[0_30px_120px_rgba(0,0,0,0.65)]">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(86,204,255,0.14),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(44,124,255,0.10),transparent_30%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(82,170,255,0.14),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(56,120,255,0.10),transparent_30%)]" />
 
             <div className="relative border-b border-white/10 px-6 py-5">
               <h2 className="text-2xl font-semibold text-white">Delete Logged Meal</h2>
@@ -1464,7 +1464,7 @@ export default function DashboardPage() {
       {showWelcomeModal && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/85 px-4">
           <div className="relative w-full max-w-3xl overflow-hidden rounded-[32px] border border-[#0B65B8] bg-[#04070d] shadow-[0_30px_120px_rgba(0,0,0,0.65)]">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(86,204,255,0.14),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(44,124,255,0.10),transparent_30%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(82,170,255,0.14),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(56,120,255,0.10),transparent_30%)]" />
 
             <div className="relative border-b border-white/10 px-6 py-6 md:px-8 md:py-7">
               <p className="text-sm uppercase tracking-[0.28em] text-[#73CCFF]/80">
